@@ -2,6 +2,7 @@ package data;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import data.ProductAndQuantity;
 
 public class Wholesaler {
 	private ArrayList<Fournisseur> fournisseurList;
@@ -146,5 +147,38 @@ public class Wholesaler {
 			ans = sc.nextInt();
 		}while(ans < 0 || ans > limit);
 		System.out.println("L'entrepot "+this.warehouseList.get(ans).getAddress()+" comporte "+this.warehouseList.get(ans).getCapacity()+" espaces libres.");
+	}
+	public void getAmountOf(){
+		Scanner sc = new Scanner(System.in);
+		int limit = 0;
+		int ans = -1;
+		ArrayList<Product> productList = new ArrayList();
+		ProductAndQuantity current = null;
+		for(Warehouse w : this.warehouseList){
+			for(int i=0; i<= w.getStored().size(); i++){
+				current = (ProductAndQuantity) w.getStored().get(i);
+				if(productList.indexOf(current.getProduct()) != -1)
+					productList.add(current.getProduct());
+			}
+		}
+		
+		System.out.println("De quel produit voulez-vous connaitre le stock ?");
+		for(Product p : productList)
+			System.out.println(productList.indexOf(p)+". "+p.getName());
+		limit = productList.size() - 1;
+		do{
+			System.out.println("Veuillez entrer un nombre entre 0 et "+limit);
+			ans = sc.nextInt();
+		}while(ans < 0 || ans > limit);
+		
+		int cpt = 0;
+		for(Warehouse w : this.warehouseList){
+			for(int i=0; i<= w.getStored().size(); i++){
+				current = (ProductAndQuantity) w.getStored().get(i);
+				if(current.getProduct() == productList.get(ans))
+					cpt = cpt + current.getQuantity();
+			}
+		}
+		System.out.println("Le produit : "+productList.get(ans)+" est disponible en "+cpt+" exemplaires.");
 	}
 }
