@@ -131,7 +131,7 @@ public class Wholesaler {
 		System.out.println("Commande reçue !");
 	}
 	
-	public void orderFromClient(Product product, int quantity){
+	public void orderFromClient(){
 		
 	}
 	public void getCapacityOf(){
