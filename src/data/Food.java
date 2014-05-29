@@ -11,8 +11,8 @@ public class Food extends Product{
 		this.dlc = new Date(0);
 		this.temperature = 0;
 	}
-	public Food(String name, float price, int pack, Date dlc, float temperature){
-		super(name, price, pack, true);
+	public Food(String name, Date dlc, float temperature){
+		super(name, true);
 		this.dlc = dlc;
 		this.temperature = temperature;
 	}

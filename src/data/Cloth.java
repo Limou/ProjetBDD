@@ -9,8 +9,8 @@ public class Cloth extends Product{
 		this.size = new String();
 		this.color = new String();
 	}
-	public Cloth(String name, float price, int pack, String size, String color){
-		super(name, price, pack, false);
+	public Cloth(String name, String size, String color){
+		super(name, false);
 		this.size = size; 
 		this.color = color;
 	}

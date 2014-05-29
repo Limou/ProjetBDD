@@ -69,6 +69,7 @@ public class Wholesaler {
 	public ArrayList<Warehouse> getWarehouseList(){ return this.warehouseList; }
 	
 	public void orderToFournisseur(){
+		/*
 		Scanner sc;
 		int limit = 0;
 		int ans;
@@ -105,9 +106,9 @@ public class Wholesaler {
 		
 		sc = new Scanner(System.in);
 		ans = -1;
-		System.out.println("Quelle quantité de ce produit voulez-vous commander ?");
+		System.out.println("Quelle quantit≈Ω de ce produit voulez-vous commander ?");
 		do{
-			System.out.println("Veuillez entrer un nombre suppérieur à 1");
+			System.out.println("Veuillez entrer un nombre supp≈Ωrieur ÀÜ 1");
 			ans = sc.nextInt();
 		}while(ans < 1);
 		quantity = ans;
@@ -120,21 +121,23 @@ public class Wholesaler {
 			limit = i;
 		}
 		do{
-			System.out.println("Veuillez entrer un nombre entre 0 et "+limit+". L'entrepot doit être adapté à ce produit et avoir la capacité de stockage nécessaire.");
+			System.out.println("Veuillez entrer un nombre entre 0 et "+limit+". L'entrepot doit ÔøΩtre adapt≈Ω ÀÜ ce produit et avoir la capacit≈Ω de stockage n≈Ωcessaire.");
 			ans = sc.nextInt();
 		}while(ans < 0 || ans > limit || this.fournisseurList.get(fournisseurID).getProducts().get(productID).getType() == this.warehouseList.get(ans).getColdChamber() || quantity > this.warehouseList.get(ans).getCapacity());
 		warehouseID = ans;
 		
-		System.out.println("Vous avez commandé "+quantity+" "+this.fournisseurList.get(fournisseurID).getProducts().get(productID).getName()+" à "+this.fournisseurList.get(fournisseurID).getName()+" à recevoir au "+this.warehouseList.get(warehouseID).getAddress());
+		System.out.println("Vous avez command≈Ω "+quantity+" "+this.fournisseurList.get(fournisseurID).getProducts().get(productID).getName()+" ÀÜ "+this.fournisseurList.get(fournisseurID).getName()+" ÀÜ recevoir au "+this.warehouseList.get(warehouseID).getAddress());
 		this.warehouseList.get(warehouseID).addToStored(this.fournisseurList.get(fournisseurID).getProducts().get(productID), quantity);
 		this.warehouseList.get(warehouseID).setCapacity(this.warehouseList.get(warehouseID).getCapacity() - quantity);
-		System.out.println("Commande reçue !");
+		System.out.println("Commande reÔøΩue !");
+		*/
 	}
 	
 	public void orderFromClient(){
 		
 	}
 	public void getCapacityOf(){
+		/*
 		Scanner sc = new Scanner(System.in);
 		int limit = 0;
 		int ans = -1;
@@ -147,8 +150,10 @@ public class Wholesaler {
 			ans = sc.nextInt();
 		}while(ans < 0 || ans > limit);
 		System.out.println("L'entrepot "+this.warehouseList.get(ans).getAddress()+" comporte "+this.warehouseList.get(ans).getCapacity()+" espaces libres.");
+		*/
 	}
 	public void getAmountOf(){
+		/*
 		Scanner sc = new Scanner(System.in);
 		int limit = 0;
 		int ans = -1;
@@ -180,5 +185,6 @@ public class Wholesaler {
 			}
 		}
 		System.out.println("Le produit : "+productList.get(ans)+" est disponible en "+cpt+" exemplaires.");
+		*/
 	}
 }
