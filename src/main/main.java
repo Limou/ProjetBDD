@@ -1,15 +1,19 @@
 package main;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import data.Wholesaler;
 import networking.DatabaseInterface;
 
 class main {
+	private static DatabaseInterface databaseInterface;
+	
 	public static void main (String[] args){
 		try {
-			DatabaseInterface databaseInterface = new DatabaseInterface(args[0], args[1], args[2]);
+			databaseInterface = new DatabaseInterface(args[0], args[1], args[2]);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -47,11 +51,24 @@ class main {
 		dataSave();
 	}
 	public static Wholesaler dataLoad(){
-		Wholesaler result = null;
-		// ici on charge en mémoire les données de la base de données
-		return result;
+		Wholesaler owner = new Wholesaler();
+		try {
+			ResultSet addresses = databaseInterface.readDb("Select * from adresselivraison");
+			while (addresses.next()) {
+			    String name = addresses.getString("adresse");
+			    name[i++] = name;
+			}
+			for (i=0, i=name.length, i++) 
+			{
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		// ici on charge en mémoire les données de la base de données selim
+		return owner;
 	}
 	public static void dataSave(){
-		// ici on sauvegarde toutes les données sur la BDD
+		// ici on sauvegarde toutes les données sur la BDD selim
 	}
 }
