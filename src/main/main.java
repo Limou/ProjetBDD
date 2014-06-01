@@ -25,10 +25,10 @@ class main {
 		boolean continuer = true;
 		while(continuer == true){
 			System.out.println("Que voulez-vous faire ?");
-			System.out.println("1.Commander un produit ˆ un fournisseur.");
+			System.out.println("1.Commander un produit ï¿½ un fournisseur.");
 			System.out.println("2.Saisir la commande d'un client.");
-			System.out.println("3.Etat du stock d'un produit donnŽ.");
-			System.out.println("4.Etat de la capacitŽ d'un entrepot.");
+			System.out.println("3.Etat du stock d'un produit donnï¿½.");
+			System.out.println("4.Etat de la capacitï¿½ d'un entrepot.");
 			do{
 				System.out.println("Veuillez saisir un nombre entre 1 et 4");
 				ans = sc.nextInt();
@@ -52,6 +52,7 @@ class main {
 	}
 	public static Wholesaler dataLoad(){
 		Wholesaler owner = new Wholesaler();
+		Client clientbdd = new Client();
 		try {
 			ResultSet addresses = databaseInterface.readDb("Select * from adresselivraison");
 			while (addresses.next()) {
@@ -60,15 +61,15 @@ class main {
 			}
 			for (i=0, i=name.length, i++) 
 			{
-				
+			clientbdd.deliveryAddressList[i] = name;	
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		// ici on charge en mŽmoire les donnŽes de la base de donnŽes selim
+		// ici on charge en mï¿½moire les donnï¿½es de la base de donnï¿½es selim
 		return owner;
 	}
 	public static void dataSave(){
-		// ici on sauvegarde toutes les donnŽes sur la BDD selim
+		// ici on sauvegarde toutes les donnï¿½es sur la BDD selim
 	}
 }
